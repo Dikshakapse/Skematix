@@ -37,14 +37,13 @@ export function About() {
 
             {/* Floating Stats */}
             <motion.div 
-              className="absolute -bottom-6 -left-6 bg-slate-900 border border-[#2F80ED]/30 rounded-lg p-4 backdrop-blur-sm"
+              
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <div className="text-3xl mb-1 text-[#2F80ED]">500+</div>
-              <div className="text-sm text-slate-400">Projects Delivered</div>
+              
             </motion.div>
           </motion.div>
 

@@ -1,4 +1,271 @@
-pretrained_models/
+# ============================================================================
+# PRODUCTION-READY .gitignore for ML + Web 3D Floor Plan Viewer Project
+# ============================================================================
+# Safe for team collaboration | Preserves all source code and configs
+# Last updated: January 2026
+
+# ============================================================================
+# PYTHON VIRTUAL ENVIRONMENTS
+# ============================================================================
+# Virtual environment directories (cross-platform)
+.venv/
+venv/
+env/
+ENV/
+.env.local
+.env.*.local
+
+# Python environment files (pip, conda)
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# ============================================================================
+# PYTHON CACHE & COMPILATION
+# ============================================================================
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python C extensions
+*.so
+*.pyd
+
+# Python coverage
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# Python type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ============================================================================
+# PRETRAINED MODEL WEIGHTS & LARGE BINARIES
+# ============================================================================
+# Do NOT commit model files (download via script or separate instructions)
+
+# Common ML model formats
 *.pth
-*.pkl
 *.pt
+*.pkl
+*.pickle
+*.h5
+*.onnx
+*.pb
+*.savedmodel/
+
+# Model directories (CubiCasa5K and others)
+pretrained_models/
+models/weights/
+checkpoints/
+
+# Temporarily disabled: Allow model download scripts to exist
+# (but not the actual weights they download)
+
+# ============================================================================
+# NODE.JS / WEB DEPENDENCIES
+# ============================================================================
+# npm packages (Three.js CDN used, so rarely needed locally)
+node_modules/
+package-lock.json
+yarn.lock
+.npm/
+
+# Node cache
+.node_cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================================================
+# OPERATING SYSTEM FILES
+# ============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+
+# ============================================================================
+# IDE & EDITOR METADATA
+# ============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm / JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+*.orig
+
+# Vim/Neovim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+.vim/
+.nvimrc
+
+# VS
+.vs/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================================================
+# TEMPORARY & DEBUG FILES
+# ============================================================================
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+
+# Log files (local testing)
+*.log
+logs/
+log/
+
+# Debug artifacts
+debug_*.json
+*.debug
+debug/
+
+# Temporary test outputs (keep test files, ignore outputs)
+# (individual test output files, not entire directories)
+test_output_*.txt
+
+# ============================================================================
+# LOCAL DEVELOPMENT & ENVIRONMENT
+# ============================================================================
+# Environment variables (local overrides)
+.env
+.env.local
+.env.*.local
+
+# Local development config overrides
+local_config.py
+config.local.py
+
+# IDE temporary run configs
+.run/
+
+# ============================================================================
+# GENERATED WEB/3D ASSETS
+# ============================================================================
+# If you export floor plans locally (GLB/OBJ), ignore temporary exports
+# NOTE: Keep export scripts in source, just not output files
+*.glb.tmp
+*.obj.tmp
+*.gltf.tmp
+
+# Three.js local build (if ever created, CDN is preferred)
+# dist-three/
+
+# ============================================================================
+# BUILD & COMPILATION ARTIFACTS
+# ============================================================================
+# If using any C extensions or compiled modules
+*.o
+*.a
+*.so
+*.dylib
+
+# ============================================================================
+# JUPYTER/IPYTHON
+# ============================================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ============================================================================
+# PROFILING & TESTING
+# ============================================================================
+# Profiling output
+*.prof
+prof_output/
+
+# Testing/Coverage reports (beyond pytest)
+.hypothesis/
+.tox/
+
+# ============================================================================
+# IMPORTANT: DO NOT IGNORE THESE
+# ============================================================================
+# Source code (ALL directories preserved)
+!pipeline/
+!backend/
+!blender/
+!frontend/
+!docs/
+!scripts/
+
+# Configuration files
+!*.yml
+!*.yaml
+!*.json
+!*.toml
+!*.cfg
+!*.ini
+!*.conf
+
+# Documentation
+!README.md
+!*.md
+!LICENSE
+!CONTRIBUTING.md
+
+# Project files
+!requirements.txt
+!package.json
+
+# Keep folder structures alive (even if empty)
+!.gitkeep
+!input/.gitkeep
+!output/.gitkeep
+
+# ============================================================================
+# NOTES ON IGNORED DIRECTORIES
+# ============================================================================
+# input/  → Folder is tracked, contents are not ignored by default
+#           (safe - input files should be re-added by team)
+# output/ → Folder is tracked, contents are not ignored by default
+#           (safe - output files are regenerated by pipeline)
+#
+# If output becomes too large, selectively ignore:
+# output/*.json
+# output/*.png
+# output/*.jpg
+# (But only if truly necessary)
+
+# ============================================================================
+# END OF .gitignore
+# ============================================================================
+# For questions or modifications, update this file and commit the changes
+# so the entire team uses the same ignore rules.
+# ============================================================================
